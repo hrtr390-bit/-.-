@@ -3335,3 +3335,59 @@ html {
 
 
 
+.a{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:40px 10px;
+}
+
+.b{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.c{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#e8f4ff,#ffffff);
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:sans-serif;
+  transition:.3s;
+}
+
+.c:hover{
+  transform:translateY(-5px);
+}
+
+.c i{
+  font-size:16px;
+}
+
+.n{
+  font-size:14px;
+  font-weight:bold;
+  margin-top:2px;
+}
+
+.c p{
+  font-size:10px;
+  margin:0;
+  opacity:.7;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .c{
+    width:80px;
+    height:80px;
+  }
+}
