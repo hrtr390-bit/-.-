@@ -618,3 +618,32 @@ branchesPopup.addEventListener("click", (e) => {
 
 
 
+let n = document.querySelectorAll(".n");
+
+let run = (el) => {
+  let t = +el.dataset.t;
+  let c = 0;
+
+  let x = setInterval(() => {
+    c += Math.ceil(t / 60);
+
+    if (c >= t) {
+      c = t;
+      clearInterval(x);
+    }
+
+    el.textContent = c + (t === 95 ? "%" : "+");
+
+  }, 20);
+};
+
+let obs = new IntersectionObserver((e)=>{
+  e.forEach(i=>{
+    if(i.isIntersecting){
+      run(i.target);
+      obs.unobserve(i.target);
+    }
+  });
+});
+
+n.forEach(i=>obs.observe(i));
